@@ -6,6 +6,8 @@ number = 600851475143
 divisor = (number - 1) / 2
 factorlist = []
 def step(start, end , step):
+    # You can use range to do this functionality, but I'm impressed you implemented it
+    # https://docs.python.org/2/library/functions.html#range
     while start <= end:
         yield start
         start = start - step
