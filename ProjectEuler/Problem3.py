@@ -24,7 +24,9 @@ divisorlist = lowdivisorlist + highdivisorlist
 divisorlist.sort()
 #print "The divisors of " + str(number) + " are " + str(divisorlist)
 
-while possibleprime < endpoint:
+checkuntil = (divisorlist[-1])/2
+
+while possibleprime < checkuntil:
     for prime in primelist:
         if possibleprime%prime == 0:
             allfailed = False
