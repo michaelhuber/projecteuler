@@ -1,13 +1,14 @@
 #The prime factors of 13195 are 5, 7, 13 and 29.
 
 #What is the largest prime factor of the number 600851475143 ?
+import math
 
 number = 600851475143
 divisor = 3
-primelist = [3, 5, ]
+primelist = [2]
 primedivisorlist = []
 
-while (divisor < number/2):
+while (divisor < math.sqrt(number)):
     for i in primelist:
         if divisor%i == 0:
             break
@@ -19,4 +20,6 @@ for i in primelist:
     if number%i == 0:
         primedivisorlist.append(i)
     
-print primedivisorlist[-1]
+importantprime = primedivisorlist[-1]
+answer = number/importantprime
+print answer
