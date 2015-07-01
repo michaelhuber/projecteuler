@@ -4,12 +4,14 @@
 import math
 
 number = 600851475143
+# math.ceil is what you're looking for here.
 endpoint = int(math.sqrt(number)) + 1
 lowdivisorlist = []
 highdivisorlist = []
 primedivisorlist = []
 
 def factor(input):
+    # math.ceil is what you're looking for here.
     endpoint = int(math.sqrt(input)) + 1
     lowdivisorlist = []
     highdivisorlist = []
