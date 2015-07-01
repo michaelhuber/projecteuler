@@ -12,19 +12,25 @@ primelist = [2]
 primedivisorlist = []
 allfailed = True
 
+def factor(input):
+    endpoint = int(math.sqrt(number)) + 1
+    lowdivisorlist = []
+    highdivisorlist = []
 
-for i in range(2, endpoint):
-    if number%i == 0:
-        lowdivisorlist.append(i)
-        
-for i in lowdivisorlist:
-    highdivisorlist.append(number/i)
+    for i in range(2, endpoint):
+        if input%i == 0:
+            lowdivisorlist.append(i)
+                
+    for i in lowdivisorlist:
+        highdivisorlist.append(number/i)
 
-divisorlist = lowdivisorlist + highdivisorlist
-divisorlist.sort()
-#print "The divisors of " + str(number) + " are " + str(divisorlist)
+    divisorlist = lowdivisorlist + highdivisorlist
+    divisorlist.sort()
+    print divisorlist
+    
+factor(number)
 
-checkuntil = (divisorlist[-1])/2
+"""checkuntil = (divisorlist[-1])/2
 
 while possibleprime < checkuntil:
     for prime in primelist:
@@ -43,23 +49,4 @@ for divisor in divisorlist:
         primedivisorlist.append(divisor)
     allfailed = True
 
-print primedivisorlist
-
-"""while divisor < math.sqrt(number):
-    for i in primelist:
-        if divisor%i == 0:
-            allfailed == False
-            break  
-    if allfailed == True:
-        primelist.append(divisor)
-    divisor = divisor + 2
-
-for i in primelist:
-    if number%i == 0:
-        primedivisorlist.append(i)
-    
-importantprime = primedivisorlist[-1]
-answer = number/importantprime
-print primelist
-print answer
-print importantprime"""
+print primedivisorlist"""
