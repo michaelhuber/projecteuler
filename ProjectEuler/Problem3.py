@@ -7,15 +7,13 @@ number = 600851475143
 endpoint = int(math.sqrt(number)) + 1
 lowdivisorlist = []
 highdivisorlist = []
-possibleprime = 3
-primelist = [2]
 primedivisorlist = []
-allfailed = True
 
 def factor(input):
-    endpoint = int(math.sqrt(number)) + 1
+    endpoint = int(math.sqrt(input)) + 1
     lowdivisorlist = []
     highdivisorlist = []
+    divisorlist = []
 
     for i in range(2, endpoint):
         if input%i == 0:
@@ -26,9 +24,17 @@ def factor(input):
 
     divisorlist = lowdivisorlist + highdivisorlist
     divisorlist.sort()
-    print divisorlist
+    return divisorlist
     
-factor(number)
+divisorlist = factor(number)
+print divisorlist
+for i in divisorlist:
+    newdivisorlist = factor(i)
+    if len(newdivisorlist) == 0:
+        primedivisorlist.append(i)
+        
+print primedivisorlist[-1]
+        
 
 """checkuntil = (divisorlist[-1])/2
 
